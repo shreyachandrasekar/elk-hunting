@@ -10,6 +10,11 @@ instance/*
 .webassets-cache
 
 ### Flask.Python Stack ###
+# Created by https://www.gitignore.io/api/python
+
+### Python ###
+#
+#
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -17,6 +22,9 @@ __pycache__/
 
 # C extensions
 *.so
+
+# Java
+*.class
 
 # Distribution / packaging
 .Python
