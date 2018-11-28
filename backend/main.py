@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request
+import http.server
+import socketserver
 import sqlite3 as sql
 app = Flask(__name__)
+
+Handler = http.server.SimpleHTTPRequestHandler
+httpd = http.server.HTTPServer(("", 8081), Handler)
 
 @app.route('/')
 def home():
@@ -25,7 +30,7 @@ def addrec():
         msg = "error in insert operation" + str(exp)
       
     finally:
-         return render_template("result.html",msg = msg)
+         return render_template("forward.html")
          con.close()
 
 @app.route('/list')
@@ -41,3 +46,5 @@ def list():
 
 if __name__ == '__main__':
    app.run(debug = True)
+
+httpd.serve_forever()

