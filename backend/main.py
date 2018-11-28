@@ -1,11 +1,15 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 import http.server
 import socketserver
 import sqlite3 as sql
 app = Flask(__name__)
 
-Handler = http.server.SimpleHTTPRequestHandler
-httpd = http.server.HTTPServer(("", 8081), Handler)
+#Handler = http.server.SimpleHTTPRequestHandler
+#httpd = http.server.HTTPServer(("", 8081), Handler)
+
+@app.route('/ashley/<path:path>')
+def send_js(path):
+   return send_from_directory('ashley', path)
 
 @app.route('/')
 def home():
@@ -47,4 +51,4 @@ def list():
 if __name__ == '__main__':
    app.run(debug = True)
 
-httpd.serve_forever()
+#httpd.serve_forever()
