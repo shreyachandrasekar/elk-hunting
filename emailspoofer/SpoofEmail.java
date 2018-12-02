@@ -19,18 +19,23 @@ import java.io.*;
 
 public class SpoofEmail {
 
-	static final String from      = "no-reply@ashleymadisonlife.com";
+	static final String from      = "no-reply@asheleymadison.com";	
 	static final String subject   = "You've got a new message request!";
+	//static final String subject   = "Ethical project test";
 	static final String siteip    = "localhost";
 
 	/* HTTP port that faked site is running on */
 	static final String siteport  = "5000";
 
-	static final String body      = "Click <a href='http://" + siteip + ":" + siteport + "'>here</a> to resolve all pending invitations.";
-	static final String smtp_host = "localhost";
+	static final String body      = "Click <a href='http://" + siteip + ":" + siteport + "/ashley/AshleyMadison.htm'>here</a> to resolve all pending invitations.";
+	//= "Hi what's up?  This is the body for this completely legitimate message that I'm sending you today. \n Dear, Brian";
+	//static final String smtp_host = "localhost";
+	//static final String smtp_port = "25";
+	static final String smtp_host = "mail2torx3jqgcpm.onion";
 	static final String smtp_port = "25";
 	static final String smtp_user = "test@test.com";
 	static final String smtp_pass = "test";
+	static final String socks_port = "9050";
 
 	public static void main(String [] args) throws IOException {
 		System.out.println("Running email spoofer with " + (args.length) + " emails...");
@@ -44,9 +49,13 @@ public class SpoofEmail {
 		//SMTP server
 		Properties prop = new Properties();
 		prop.put("mail.smtp.host", smtp_host);
-		prop.put("mail.smtp.auth", "true");
-		prop.put("mail.smtp.starttls.enable", "true");
+		//prop.put("mail.smtp.auth", "true");
+		//prop.put("mail.smtp.starttls.enable", "true");
 		prop.put("mail.smtp.port", smtp_port);
+
+		prop.put("mail.smtp.socks.host", "127.0.0.1");
+		prop.put("mail.smtp.socks.port", socks_port);
+		prop.put("proxySet", "true");
 		
 		Authenticator auth = new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {

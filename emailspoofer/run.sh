@@ -3,5 +3,6 @@
 #shift
 
 # Startup SMTP server on port 25
-sudo postfix start
+#sudo postfix start
+#java -cp ".:lib/*" SpoofEmail $@
 java -cp ".:lib/*" SpoofEmail $@
