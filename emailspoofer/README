@@ -1,0 +1,5 @@
+1) Create a mail2tor account by logging into http://mail2tor2zyjdctd.onion/ through the tor browser
+2) Change squirrelmail personal info to match the email address you are trying to spoof
+3) Start the tor browser, noting the port that the socks5 proxy is running on (9050 or whatever it says in the logs)
+3) Run compile.sh
+4) Call ./run.sh test_emails.txt (or whatever email list you'd like to send to)
