@@ -35,7 +35,7 @@ public class SpoofEmail {
 	static final String smtp_port = "25";
 	static final String smtp_user = "test@test.com";
 	static final String smtp_pass = "test";
-	static final String socks_port = "9050";
+	static final String socks_port = "9150";
 
 	public static void main(String [] args) throws IOException {
 		System.out.println("Running email spoofer with " + (args.length) + " emails...");
