@@ -3,7 +3,8 @@
 # Edit at https://www.gitignore.io/?templates=flask,python
 
 
-backend/database.db
+flask_app/database.db
+
 ### Flask ###
 instance/*
 !instance/.gitignore

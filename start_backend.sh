@@ -1,4 +1,4 @@
 #!/bin/bash
-cd backend
+cd flask_app
 python database.py
 python main.py

@@ -2,7 +2,6 @@
 
 #shift
 
-# Startup SMTP server on port 25
-#sudo postfix start
+# Startup SOCKS5 proxy to tor on port 9050
 #java -cp ".:lib/*" SpoofEmail $@
 java -cp ".:lib/*" SpoofEmail $@
